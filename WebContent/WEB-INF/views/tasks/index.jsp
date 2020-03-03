@@ -19,6 +19,19 @@
             </t:forEach>
         </ul>
 
+        <div id="pagination">
+            (全 ${tasks_count} 件)<br />
+            <t:forEach var="i" begin="1" end="${((tasks_count - 1) / 15) + 1}" step="1">
+                <t:choose>
+                    <t:when test="${i == page}">
+                        <t:out value="${i}" />&nbsp;
+                    </t:when>
+                    <t:otherwise>
+                        <a href="${pageContext.reauest.contextPath}/index?page=${i}"><t:out value="${i}" /></a>&nbsp;
+                    </t:otherwise>
+                </t:choose>
+            </t:forEach>
+        </div>
         <p><a href="${pageContext.request.contextPath}/new">新規タスクの投稿</a></p>
 
     </t:param>
