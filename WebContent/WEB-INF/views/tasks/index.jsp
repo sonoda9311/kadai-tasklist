@@ -1,20 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:import url="../layout/app.jsp">
-    <c:param name="content">
+<t:import url="../layout/app.jsp">
+    <t:param name="content">
+        <t:if test="${flush != null}">
+            <div id="flush_success">
+                <t:out value="${flush}"></t:out>
+            </div>
+        </t:if>
         <h2>タスク一覧</h2>
         <ul>
-            <c:forEach var="task" items="${tasks}">
+            <t:forEach var="task" items="${tasks}">
                 <li>
                     <a href="${pageContext.request.contextPath}/show?id=${task.id}">
-                        <c:out value="${task.id}" />
+                        <t:out value="${task.id}" />
                     </a>
-                    :&gt; <c:out value="${task.content}" />
+                    :&gt; <t:out value="${task.content}" />
                 </li>
-            </c:forEach>
+            </t:forEach>
         </ul>
 
         <p><a href="${pageContext.request.contextPath}/new">新規タスクの投稿</a></p>
 
-    </c:param>
-</c:import>
+    </t:param>
+</t:import>
