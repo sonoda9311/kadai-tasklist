@@ -34,8 +34,8 @@ public class EditServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         EntityManager em = DBUtil.createEntityManager();
 
-        // 該当のIDのメッセージ１件のみをデータベースから取得
-        Task t = em.find(Task.class, Integer.parseInt(request.getParameter("Id")));
+        // 該当のIDのタスク１件のみをデータベースから取得
+        Task t = em.find(Task.class, Integer.parseInt(request.getParameter("id")));
 
         em.close();
 

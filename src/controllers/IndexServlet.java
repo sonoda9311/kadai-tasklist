@@ -45,7 +45,7 @@ public class IndexServlet extends HttpServlet {
         // 最大件数と開始位置を指定してタスクを取得
         List<Task> tasks = em.createNamedQuery("getAllTasks", Task.class)
                              .setFirstResult(15 * (page - 1))
-                             .setMaxResult(15)
+                             .setMaxResults(15)
                              .getResultList();
 
         // 全件数を取得

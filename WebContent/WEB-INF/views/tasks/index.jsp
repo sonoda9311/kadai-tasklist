@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="t" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:import url="../layout/app.jsp">
     <t:param name="content">
         <t:if test="${flush != null}">
@@ -27,7 +27,7 @@
                         <t:out value="${i}" />&nbsp;
                     </t:when>
                     <t:otherwise>
-                        <a href="${pageContext.reauest.contextPath}/index?page=${i}"><t:out value="${i}" /></a>&nbsp;
+                        <a href="${pageContext.request.contextPath}/index?page=${i}"><t:out value="${i}" /></a>&nbsp;
                     </t:otherwise>
                 </t:choose>
             </t:forEach>
